@@ -16,6 +16,14 @@ public class ArrayListPractice {
         practiceList.add(1);
         practiceList.add(9);
         System.out.println(arraySumEvens(practiceList));
+
+        ArrayList<String> practiceList2 = new ArrayList<>();
+        practiceList2.add("Drum");
+        practiceList2.add("And");
+        practiceList2.add("Bass");
+        practiceList2.add("Arena");
+
+        arrayPrint5letterWords(practiceList2);
     }
 
     public static int arraySumEvens(ArrayList<Integer> arr) {
@@ -26,6 +34,14 @@ public class ArrayListPractice {
             }
         }
         return sum;
+    }
+
+    public static void arrayPrint5letterWords(ArrayList<String> arr) {
+        for (String i : arr) {
+            if (i.length() == 5) {
+                System.out.println(i);
+            }
+        }
     }
 }
 
