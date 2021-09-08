@@ -10,4 +10,70 @@ public class Student {
     private int numberOfCredits = 0;
     private double gpa = 0.0;
 
+    public Student(String aName, int aStudentId, int aCreds, double aGpa) {
+        this.name = aName;
+        this.studentId = aStudentId;
+        this.numberOfCredits = aCreds;
+        this.gpa = aGpa;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+    protected boolean setName(String aName) {
+        try {
+            this.name = aName;
+        }
+        catch (Exception e){
+            System.out.println("Type error: I needed a string but got something else");
+            System.out.println(e);
+            return false;
+        }
+        return true;
+    }
+
+    public int getStudentId() {
+        return this.studentId;
+    }
+    protected boolean setStudentId(int aStudentId) {
+        try {
+            this.studentId = aStudentId;
+        }
+        catch (Exception e) {
+            System.out.println("Type error: I needed an integer but got something else");
+            System.out.println(e);
+            return false;
+        }
+        return true;
+    }
+
+    public int getNumberOfCredits() {
+        return this.numberOfCredits;
+    }
+    protected boolean setNumberOfCredits(int aCreds) {
+        try {
+            this.numberOfCredits = aCreds;
+        }
+        catch (Exception e) {
+            System.out.println("Type error: I needed an integer, but got something else");
+            System.out.println(e);
+            return false;
+        }
+        return true;
+    }
+
+    public double getGpa() {
+        return this.gpa;
+    }
+    protected boolean setGpa(double aGpa) {
+        try {
+            this.gpa = aGpa;
+        }
+        catch (Exception e) {
+            System.out.println("Type error: I needed an double, but got something else");
+            System.out.println(e);
+            return false;
+        }
+        return true;
+    }
 }
