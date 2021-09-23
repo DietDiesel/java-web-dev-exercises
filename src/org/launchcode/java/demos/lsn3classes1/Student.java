@@ -7,8 +7,8 @@ public class Student {
 
     private String name;
     private int studentId;
-    private int numberOfCredits = 0;
-    private double gpa = 0.0;
+    private int numberOfCredits;
+    private double gpa;
 
     public Student(String aName, int aStudentId, int aCreds, double aGpa) {
         this.name = aName;
@@ -20,6 +20,7 @@ public class Student {
     public String getName() {
         return this.name;
     }
+
     protected boolean setName(String aName) {
         try {
             this.name = aName;
@@ -35,6 +36,7 @@ public class Student {
     public int getStudentId() {
         return this.studentId;
     }
+
     protected boolean setStudentId(int aStudentId) {
         try {
             this.studentId = aStudentId;
@@ -65,6 +67,7 @@ public class Student {
     public double getGpa() {
         return this.gpa;
     }
+
     protected boolean setGpa(double aGpa) {
         try {
             this.gpa = aGpa;
@@ -75,5 +78,22 @@ public class Student {
             return false;
         }
         return true;
+    }
+
+    public String getGradeLevel(double credits) {
+        if (credits >= 30) {
+            if (credits >= 60) {
+                if (credits >= 90) {
+                    return "Senior";
+                }
+                return "Junior";
+            }
+            return "Sophomore";
+        }
+        return "Freshman";
+    }
+
+    public void addGrade(double aCreds, double aGrade) {
+
     }
 }
