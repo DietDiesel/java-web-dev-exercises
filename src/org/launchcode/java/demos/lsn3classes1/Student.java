@@ -52,6 +52,7 @@ public class Student {
     public int getNumberOfCredits() {
         return this.numberOfCredits;
     }
+
     protected boolean setNumberOfCredits(int aCreds) {
         try {
             this.numberOfCredits = aCreds;
@@ -94,6 +95,18 @@ public class Student {
     }
 
     public void addGrade(double aCreds, double aGrade) {
+        double qualityScore = gpa * numberOfCredits;
+        qualityScore += (aCreds * aGrade);
+        numberOfCredits += aCreds;
+        gpa = qualityScore / numberOfCredits;
+    }
 
+    public boolean equals(Object o) {
+        Student target = (Student) o;
+        return target.getStudentId() == getStudentId();
+    }
+
+    public String toString() {
+        return name + " ID: " + studentId + " GPA: " + gpa + " Credits: " + numberOfCredits;
     }
 }
